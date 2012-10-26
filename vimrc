@@ -41,6 +41,10 @@ set nowrap
 let c_syntax_for_h = 1
 let mapleader = ";"
 "
+" Get pathogen running. (must be before the filetype command)
+call pathogen#infect()
+call pathogen#helptags()
+"
 filetype plugin indent on
 "
 set omnifunc=syntaxcomplete#Complete
@@ -94,13 +98,18 @@ command CW :set columns=100
 command DW :set columns=161
 command SW :set columns=80
 "
+" tagList settings
+let Tlist_Use_Right_Window=1
+"
 " Platform specific things
 if has("gui_macvim")
   " Forcing Tagmenu to not load for now.  Need a newer etags.
   let loaded_tagmenu=1
+  let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
 endif
 if has("gui_win32")
   let Tmenu_ctags_cmd = 'c:\other_tools\ctags.exe'
+  let Tlist_Ctags_Cmd = 'c:\other_tools\ctags.exe'
 
   " default pathing on windows gets weird, so hard path.
   let g:ctags_command = 'c:\other_tools\ctags.exe -R .'
