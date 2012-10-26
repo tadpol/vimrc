@@ -11,12 +11,10 @@ set nobackup
 "set backupext=~
 "set digraph
 set formatoptions=tcql
-"set grepprg=internal
 set incsearch
 set joinspaces
 set laststatus=2
 set listchars=tab:»·,trail:·,extends:»,precedes:«
-set makeprg=/usr/bin/make
 set modeline
 set modelines=3
 set mousehide
@@ -87,7 +85,6 @@ vnoremap Q gq
 "
 if !exists("my_autocommands_loaded")
   let my_autocommands_loaded=1
-  au FileType java          setlocal ai sw=3 ts=3
   au FileType asm           setlocal ai cin et sw=8 ts=8
   au FileType cvs           setlocal ai sw=4 ts=4 com=fb:- fo=t2ql wm=10
 "end of my autocommands.
@@ -110,10 +107,10 @@ endif
 if has("gui_win32")
   let Tmenu_ctags_cmd = 'c:\other_tools\ctags.exe'
   let Tlist_Ctags_Cmd = 'c:\other_tools\ctags.exe'
-
-  " default pathing on windows gets weird, so hard path.
   let g:ctags_command = 'c:\other_tools\ctags.exe -R .'
+
   set cscopeprg=c:\cygwin\bin\mlcscope.exe
+  set grepprg=internal
 endif
 "
 " vim: set ai cin et sw=2 ts=2 :
