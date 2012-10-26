@@ -100,12 +100,9 @@ let Tlist_Use_Right_Window=1
 "
 " Platform specific things
 if has("gui_macvim")
-  " Forcing Tagmenu to not load for now.  Need a newer etags.
-  let loaded_tagmenu=1
   let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
 endif
 if has("gui_win32")
-  let Tmenu_ctags_cmd = 'c:\other_tools\ctags.exe'
   let Tlist_Ctags_Cmd = 'c:\other_tools\ctags.exe'
   let g:ctags_command = 'c:\other_tools\ctags.exe -R .'
 
