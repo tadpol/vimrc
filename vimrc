@@ -15,7 +15,7 @@ set encoding=utf-8
 set incsearch
 set joinspaces
 set laststatus=2
-set listchars=tab:»·,trail:·,extends:»,precedes:«
+set listchars=tab:Â»Â·,trail:Â·,extends:Â»,precedes:Â«
 set modeline
 set modelines=3
 set mousehide
