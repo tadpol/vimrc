@@ -1,7 +1,7 @@
 " This is my vimrc.  wow.
 "
-" Maintained: Michael Conrad Tilstra <tadpol@tadpol.org>
-" Last Update: Tue Oct 23 09:58:24 CDT 2012
+" Maintained: Michael Conrad Tadpol Tilstra <tadpol@tadpol.org>
+" Last Update: Tue Nov 27 10:05:05 CST 2012
 "
 "==================
 " Some simple settings.
@@ -11,6 +11,7 @@ set nobackup
 "set backupext=~
 "set digraph
 set formatoptions=tcql
+set encoding=utf-8
 set incsearch
 set joinspaces
 set laststatus=2
