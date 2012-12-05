@@ -98,6 +98,7 @@ command SW :set columns=80
 "
 " tagList settings
 let Tlist_Use_Right_Window=1
+command TW :TlistToggle
 "
 " Platform specific things
 if has("gui_macvim")
