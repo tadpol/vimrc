@@ -71,7 +71,7 @@ set suffixes+=.d,.a,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.
 "==================
 " some abreviations
 iab Ypass "You are in a maze of twisty little passages, all alike."
-iab Ydate <C-R>=strftime("%a %b %d %T %Z %Y")<CR>
+iab Ydate <C-R>=strftime("%Y-%m-%dT%H:%M")<CR>
 "
 "===================
 " some nifty macros.
