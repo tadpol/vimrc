@@ -1,5 +1,5 @@
 " Vim global plugin for using IAR to build a project
-" Last Change: 2013-01-08T10:28
+" Last Change: 2013-02-12T15:23
 " Maintainer: Michael Conrad Tadpol Tilsra <tadpol@tadpol.org>
 " Revision: 0.1
 
@@ -20,9 +20,6 @@ if !exists("g:iarbuild_path")
   let g:iarbuild_path = '"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4\common\bin\IarBuild.exe"'
 endif
 
-if !exists("g:iarbuild_action")
-  let g:iarbuild_action = "-make"
-endif
 if !exists("g:iarbuild_config")
   let g:iarbuild_config = "Debug"
 endif
@@ -73,22 +70,36 @@ function s:Find_in_parent(fln,flsrt,flstp,paths)
   return "Nothing"
 endfunc
 "
-function BuildWithIAR()
+function BuildWithIAR(action)
   let buildcmd = [g:iarbuild_path]
   let projectfile = s:Find_in_parent("*.ewp", s:windowdir(), $HOME, ".,iar")
   if projectfile == ""
     let v:errmsg = "IARBUILD: Cannot find a project file!"
     return
   endif
-  let buildcmd += [projectfile, g:iarbuild_action, g:iarbuild_config, "-log all"]
+  let buildcmd += [projectfile]
+  if a:action == "clean"
+    let buildcmd += ["-clean"]
+  elseif a:action == "rebuild"
+    let buildcmd += ["-build"]
+  else
+    let buildcmd += ["-make"]
+  endif
+  let buildcmd += [g:iarbuild_config, "-log all"]
+
   let &makeprg = join(buildcmd, ' ')
   make
   " This works. But what I really want is to have the act of expanding makeprg
   " automatically call a function that fills in the pieces.
   " Perhaps look into QuickFixCmdPre ?
+  "
+  " Look into running this on file/buffer load/save and setting the local
+  " makeprg. Will that do what I want?
 endfunc
 
-command! -bang IM wa<bang> | call BuildWithIAR()
+command! -bang IM wa<bang> | call BuildWithIAR("make")
+command! -bang IB wa<bang> | call BuildWithIAR("rebuild")
+command! -bang IC wa<bang> | call BuildWithIAR("clean")
 
 let &cpo = s:save_cpo
 " vim: set ai cin et sw=2 ts=2 :
