@@ -65,5 +65,5 @@ if !exists("*s:SwitchHeaderImpl")
     endif
   endfunc
 endif
-map <buffer> <C-Up> :call <SID>SwitchHeaderImpl()<CR>
+map <buffer> <C-A-Up> :call <SID>SwitchHeaderImpl()<CR>
 
