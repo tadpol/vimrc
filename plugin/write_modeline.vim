@@ -36,7 +36,7 @@ function s:Make_modeline()
   elseif &ft == "vim"
     let ml = "\" " . ml . ":"
   elseif &ft == "lua"
-    let ml = "--" . ml . ":"
+    let ml = "-- " . ml . ":"
   else
     let ml = "#  " . ml . ":"
   endif
