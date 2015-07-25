@@ -5,7 +5,7 @@
 "
 "==================
 " Some simple settings.
-set background=dark
+set background=light
 set backspace=2
 set nobackup
 "set backupext=~
@@ -54,6 +54,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 " the gui tweeks
 if has("gui_running")
+  set background=dark
   " turn off that ******** blinking cursor!!!
   set guicursor=a:blinkon0
   " and the toolbar and tearof menus
