@@ -17,7 +17,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists("g:iarbuild_path")
-  let g:iarbuild_path = '"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4\common\bin\IarBuild.exe"'
+  let g:iarbuild_path = '"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\common\bin\IarBuild.exe"'
 endif
 
 if !exists("g:iarbuild_config")
