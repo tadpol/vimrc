@@ -103,8 +103,10 @@ command TW :TlistToggle
 "
 " Platform specific things
 if has("gui_macvim")
-  let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
-  let g:ctags_command = '/opt/local/bin/ctags -R .'
+  "let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
+  "let g:ctags_command = '/opt/local/bin/ctags -R .'
+
+  nmap <silent> <leader>d <Plug>DashSearch
 endif
 if has("gui_win32")
   let Tlist_Ctags_Cmd = 'c:\other_tools\ctags.exe'
