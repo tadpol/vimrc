@@ -1,7 +1,7 @@
 " This is my vimrc.  wow.
 "
 " Maintained: Michael Conrad Tadpol Tilstra <tadpol@tadpol.org>
-" Last Update: Tue Nov 27 10:05:05 CST 2012
+" Last Update: 2015-11-16T15:09-0600
 "
 "==================
 " Some simple settings.
@@ -55,6 +55,7 @@ endif
 " the gui tweeks
 if has("gui_running")
   set background=dark
+  set nobeval
   " turn off that ******** blinking cursor!!!
   set guicursor=a:blinkon0
   " and the toolbar and tearof menus
@@ -72,7 +73,7 @@ set suffixes+=.d,.a,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.
 "==================
 " some abreviations
 iab Ypass "You are in a maze of twisty little passages, all alike."
-iab Ydate <C-R>=strftime("%Y-%m-%dT%H:%M")<CR>
+iab Ydate <C-R>=strftime("%Y-%m-%dT%H:%M%z")<CR>
 "
 "===================
 " some nifty macros.
@@ -89,6 +90,7 @@ if !exists("my_autocommands_loaded")
   let my_autocommands_loaded=1
   au FileType asm           setlocal ai cin et sw=8 ts=8
   au FileType cvs           setlocal ai sw=4 ts=4 com=fb:- fo=t2ql wm=10
+  au FileType taskpaper     setlocal ai noet sw=2 ts=2
 "end of my autocommands.
 endif
 "
