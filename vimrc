@@ -1,7 +1,6 @@
 " This is my vimrc.  wow.
 "
 " Maintained: Michael Conrad Tadpol Tilstra <tadpol@tadpol.org>
-" Last Update: 2015-11-16T15:09-0600
 "
 "==================
 " Some simple settings.
@@ -97,7 +96,10 @@ endif
 "
 command CW :set columns=100
 command DW :set columns=161
-command SW :set columns=80
+" SingleWidth is half of my laptop
+command SW :set columns=89
+" FullWidth is the whole screen of my laptop
+command FW :set columns=180
 "
 " tagList settings
 let Tlist_Use_Right_Window=1
