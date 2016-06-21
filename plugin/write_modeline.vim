@@ -1,6 +1,6 @@
 " Vim global plugin for appending a modeline with current settings.
-" Last Change: Fri Nov 30 11:23:50 CST 2001
-" Maintainer: Michael Conrad Tilsra <tadpol@tadpol.org>
+" Last Change: 2016-06-14T10:08-0500
+" Maintainer: Michael Conrad Tadpol Tilsra <tadpol@tadpol.org>
 
 if exists("loaded_write_modeline")
   finish
@@ -29,6 +29,8 @@ function s:Make_modeline()
   " should pull these out somehow..
   if &ft == "c"
     let ml = "/* " . ml . ": */"
+  elseif &ft == "go"
+    let ml = "// " . ml . ":"
   elseif &ft == "cpp"
     let ml = "// " . ml . ":"
   elseif &ft == "java"
