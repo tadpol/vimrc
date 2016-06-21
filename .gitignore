@@ -14,4 +14,4 @@ Icon
 *.un~
 Session.vim
 .netrwhist
-
+*.spl
