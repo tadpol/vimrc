@@ -1,9 +1,12 @@
 [submodule "bundle/dash.vim"]
 	path = bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "bundle/vim-swift"]
-	path = bundle/vim-swift
-	url = git@github.com:kballard/vim-swift.git
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-swift"]
+	path = bundle/vim-swift
+	url = git@github.com:kballard/vim-swift.git

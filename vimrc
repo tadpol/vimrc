@@ -53,7 +53,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 " the gui tweeks
 if has("gui_running")
-  set background=dark
+  "set background=dark
   set nobeval
   " turn off that ******** blinking cursor!!!
   set guicursor=a:blinkon0
@@ -64,7 +64,8 @@ if has("gui_running")
 endif "has("gui_running")
 " Colour fixes.  This over use of bold is pissing me off.
 " so much here i just made my own color scheme.
-colorscheme tadcolor
+"colorscheme tadcolor
+colorscheme solarized
 "
 "Suffixes that get lower priority when tabbing
 set suffixes+=.d,.a,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
