@@ -79,11 +79,14 @@ if has("gui_running")
   set guioptions-=tT
   "set guifont=Fixed
   "set guifont=7x13
+  colorscheme solarized
+else
+  colorscheme tadcolor
 endif "has("gui_running")
 " Colour fixes.  This over use of bold is pissing me off.
 " so much here i just made my own color scheme.
 "colorscheme tadcolor
-colorscheme solarized
+"colorscheme solarized
 "
 "Suffixes that get lower priority when tabbing
 set suffixes+=.d,.a,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
