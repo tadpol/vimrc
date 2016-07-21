@@ -10,3 +10,6 @@
 [submodule "bundle/vim-swift"]
 	path = bundle/vim-swift
 	url = git@github.com:kballard/vim-swift.git
+[submodule "bundle/neocomplete.vim"]
+	path = bundle/neocomplete.vim
+	url = git@github.com:Shougo/neocomplete.vim.git
