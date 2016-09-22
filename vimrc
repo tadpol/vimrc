@@ -35,7 +35,7 @@ set viminfo='100,f1,\"500,\h,:20,/20
 set visualbell
 set wrapmargin=5
 set nowrap
-" 
+"
 let c_syntax_for_h = 1
 let mapleader = ";"
 "
@@ -55,7 +55,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " <TAB>: completion.
@@ -79,6 +79,7 @@ if has("gui_running")
   set guioptions-=tT
   "set guifont=Fixed
   "set guifont=7x13
+  let g:solarized_menu=0
   colorscheme solarized
 else
   colorscheme tadcolor
@@ -87,6 +88,33 @@ endif "has("gui_running")
 " so much here i just made my own color scheme.
 "colorscheme tadcolor
 "colorscheme solarized
+"
+" airline
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 "
 "Suffixes that get lower priority when tabbing
 set suffixes+=.d,.a,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -112,6 +140,8 @@ if !exists("my_autocommands_loaded")
   au FileType asm           setlocal ai cin et sw=8 ts=8
   au FileType cvs           setlocal ai sw=4 ts=4 com=fb:- fo=t2ql wm=10
   au FileType taskpaper     setlocal ai noet sw=2 ts=2
+  au FileType lua           setlocal ai noet sw=2 ts=2
+  au FileType ruby          setlocal ai et sw=2 ts=2
 "end of my autocommands.
 endif
 "
