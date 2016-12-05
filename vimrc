@@ -87,15 +87,13 @@ if has("gui_running")
   set guioptions-=tT
   "set guifont=Fixed
   "set guifont=7x13
-  let g:solarized_menu=0
-  colorscheme solarized
 else
-  colorscheme tadcolor
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
 endif "has("gui_running")
-" Colour fixes.  This over use of bold is pissing me off.
-" so much here i just made my own color scheme.
-"colorscheme tadcolor
-"colorscheme solarized
+" I just use solarized everywhere these days
+let g:solarized_menu=0
+colorscheme solarized
 "
 " airline
 let g:airline_mode_map = {
