@@ -73,6 +73,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_checkers = ['c/make']
 let g:syntastic_lua_checkers = ['luacheck']
 let g:syntastic_c_config_file=".syntastic_c_config"
+"
+let g:syntastic_html_tidy_ignore_errors = []
+let g:syntastic_html_tidy_ignore_errors += ['proprietary attribute "integrity"']
+let g:syntastic_html_tidy_ignore_errors += ['proprietary attribute "crossorigin"']
 let g:syntastic_html_tidy_blocklevel_tags=['nav']
 "
 if &t_Co > 2 || has("gui_running")
