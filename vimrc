@@ -6,6 +6,7 @@
 " Some simple settings.
 set background=light
 set backspace=2
+set breakindent
 set nobackup
 "set backupext=~
 "set digraph
@@ -15,6 +16,7 @@ set incsearch
 set joinspaces
 set laststatus=2
 set listchars=tab:»·,trail:·,extends:»,precedes:«
+set linebreak
 set modeline
 set modelines=3
 set mousehide
@@ -25,6 +27,7 @@ set nohlsearch
 set noignorecase
 set ruler
 set shiftwidth=4
+set showbreak=↪︎
 set showcmd
 set showmatch
 set showmode
