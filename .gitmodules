@@ -25,3 +25,6 @@
 [submodule "bundle/taskpaper"]
 	path = bundle/taskpaper
 	url = https://github.com/davidoc/taskpaper.vim.git
+[submodule "bundle/vim-pgsql"]
+	path = bundle/vim-pgsql
+	url = https://github.com/Prosumma/vim-pgsql.git
