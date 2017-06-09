@@ -28,3 +28,6 @@
 [submodule "bundle/vim-pgsql"]
 	path = bundle/vim-pgsql
 	url = https://github.com/Prosumma/vim-pgsql.git
+[submodule "bundle/vim-ps1"]
+	path = bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git
