@@ -1,5 +1,5 @@
 " Vim global plugin for appending a modeline with current settings.
-" Last Change: 2016-06-14T10:08-0500
+" Last Change: 2017-07-31T07:49-0500
 " Maintainer: Michael Conrad Tadpol Tilsra <tadpol@tadpol.org>
 
 if exists("loaded_write_modeline")
@@ -39,6 +39,8 @@ function s:Make_modeline()
     let ml = "\" " . ml . ":"
   elseif &ft == "lua"
     let ml = "-- " . ml . ":"
+  elseif &ft == "openscad"
+    let ml = "// " . ml . ":"
   else
     let ml = "#  " . ml . ":"
   endif
