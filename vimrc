@@ -51,6 +51,7 @@ filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,longest
 "
+"
 " NeoComplete
 "let g:neocomplete#enable_at_startup = 1
 "let g:neocomplete#enable_smart_case = 1
@@ -98,6 +99,7 @@ if has("gui_running")
   set guioptions-=tT
   "set guifont=Fixed
   "set guifont=7x13
+  set guifont="Menlo Regular:h11"
 else
   let g:solarized_termtrans=1
   let g:solarized_termcolors=256
@@ -159,6 +161,7 @@ if !exists("my_autocommands_loaded")
   au FileType taskpaper     setlocal ai noet sw=2 ts=2
   au FileType lua           setlocal ai noet sw=2 ts=2
   au FileType ruby          setlocal ai et sw=2 ts=2
+  au FileType zsh           setlocal ai et sw=2 ts=2
 "end of my autocommands.
 endif
 "
