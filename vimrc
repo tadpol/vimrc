@@ -4,6 +4,7 @@
 "
 "==================
 " Some simple settings.
+set autoindent
 set background=light
 set backspace=2
 set breakindent
@@ -12,6 +13,7 @@ set nobackup
 "set digraph
 set formatoptions=tcql
 set encoding=utf-8
+set expandtab
 set incsearch
 set joinspaces
 set laststatus=2
@@ -26,14 +28,14 @@ set noerrorbells
 set nohlsearch
 set noignorecase
 set ruler
-set shiftwidth=4
+set shiftwidth=2
 set showbreak=↪︎
 set showcmd
 set showmatch
 set showmode
 set splitbelow
 set title
-set tabstop=4
+set tabstop=2
 set viminfo='100,f1,\"500,\h,:20,/20
 set visualbell
 set wrapmargin=5
@@ -52,40 +54,6 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,longest
 "
 "
-" NeoComplete
-"let g:neocomplete#enable_at_startup = 1
-"let g:neocomplete#enable_smart_case = 1
-"let g:neocomplete#sources#syntax#min_keyword_length = 3
-"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-"" Define keyword.
-"if !exists('g:neocomplete#keyword_patterns')
-"  let g:neocomplete#keyword_patterns = {}
-"endif
-"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_checkers = ['c/make']
-let g:syntastic_lua_checkers = ['luacheck']
-let g:syntastic_c_config_file=".syntastic_c_config"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_pgsql_checkers = ['sqlint']
-let g:syntastic_pgsql_sql_exec = "/usr/local/bin/sqlint"
-"
-let g:syntastic_html_tidy_ignore_errors = []
-let g:syntastic_html_tidy_ignore_errors += ['proprietary attribute "integrity"']
-let g:syntastic_html_tidy_ignore_errors += ['proprietary attribute "crossorigin"']
-let g:syntastic_html_tidy_blocklevel_tags=['nav']
-"
 if &t_Co > 2 || has("gui_running")
   syntax enable
 endif
@@ -99,7 +67,8 @@ if has("gui_running")
   set guioptions-=tT
   "set guifont=Fixed
   "set guifont=7x13
-  set guifont="Menlo Regular:h11"
+  "set guifont="Menlo Regular:h11"
+  set guifont="-monospace-:h12"
 else
   let g:solarized_termtrans=1
   let g:solarized_termcolors=256
@@ -158,10 +127,6 @@ if !exists("my_autocommands_loaded")
   let my_autocommands_loaded=1
   au FileType asm           setlocal ai cin et sw=8 ts=8
   au FileType cvs           setlocal ai sw=4 ts=4 com=fb:- fo=t2ql wm=10
-  au FileType taskpaper     setlocal ai noet sw=2 ts=2
-  au FileType lua           setlocal ai noet sw=2 ts=2
-  au FileType ruby          setlocal ai et sw=2 ts=2
-  au FileType zsh           setlocal ai et sw=2 ts=2
 "end of my autocommands.
 endif
 "
@@ -169,27 +134,8 @@ endif
 command CW :set columns=100
 command DW :set columns=161
 " SingleWidth is half of my laptop
-command SW :set columns=89
+command SW :set columns=106
 " FullWidth is the whole screen of my laptop
-command FW :set columns=180
-"
-" tagList settings
-let Tlist_Use_Right_Window=1
-command TW :TlistToggle
-"
-" Platform specific things
-if has("gui_macvim")
-  "let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
-  "let g:ctags_command = '/opt/local/bin/ctags -R .'
-
-  nmap <silent> <leader>d <Plug>DashSearch
-endif
-if has("gui_win32")
-  let Tlist_Ctags_Cmd = 'c:\other_tools\ctags.exe'
-  let g:ctags_command = 'c:\other_tools\ctags.exe -R .'
-
-  set cscopeprg=c:\cygwin\bin\mlcscope.exe
-  set grepprg=internal
-endif
+command FW :set columns=212
 "
 " vim: set ai cin et sw=2 ts=2 :
